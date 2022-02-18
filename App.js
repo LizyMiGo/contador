@@ -16,6 +16,7 @@ const App = () => {
   useEffect(() =>{
     const temporizador = setInterval(()=>{
       setSegundos(segundos => segundos + 1);
+
     },1000);
 
     if (segundos == 60){
@@ -31,7 +32,7 @@ const App = () => {
 
     <View>
       <NuevoComponente title ="RELOJ"/>
-      <Text style={{fontSize: 30}}> {minutos} : {segundos}</Text>
+      <Text style={{fontSize: 30}}> {(minutos < 10)? "0" + minutos : minutos} : {(segundos < 10)? "0" + segundos : segundos}</Text>
 
     </View>
     
